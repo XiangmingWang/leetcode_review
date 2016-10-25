@@ -9,20 +9,20 @@ public:
     /** Inserts a value to the set. Returns true if the set did not already contain the specified element. */
     bool insert(int val) {
         if (m_.find(val) != m_.end()) return false;
-		m_[val] = array_.size();
-		array_.push_back(val);
-		return true;
+      m_[val] = array_.size();
+      array_.push_back(val);
+      return true;
     }
     
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     bool remove(int val) {
-       	if (m_.find(val) == m_.end()) return false;
-		int last = array_[array_.size()-1];
-		m_[last] = m_[val];
-		array_[m_[val]] = last;
-		array_.pop_back();
-		m_.erase(val);
-		return true; 
+          if (m_.find(val) == m_.end()) return false;
+      int last = array_[array_.size()-1];
+      m_[last] = m_[val];
+      array_[m_[val]] = last;
+      array_.pop_back();
+      m_.erase(val);
+      return true; 
     }
     
     /** Get a random element from the set. */
@@ -30,8 +30,8 @@ public:
         return array_[rand()%array_.size()];
     }
 private:
-	vector<int> array_;
-	unordered_map<int, int> m_;
+   vector<int> array_;
+   unordered_map<int, int> m_;
 };
 
 /**

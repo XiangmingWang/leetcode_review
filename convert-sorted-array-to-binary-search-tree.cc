@@ -11,16 +11,16 @@
 class Solution {
 public:
     TreeNode* sortedArrayToBST(vector<int>& nums) {
-		return ConstructBST(nums, 0, nums.size() - 1);
+      return ConstructBST(nums, 0, nums.size() - 1);
     }
-	TreeNode* ConstructBST(vector<int>& nums,
-						   int left,
-						   int right) {
-		if (left > right) return NULL;
-		int med = (left + right) / 2;
-		TreeNode* root = new TreeNode(nums[med]);
-		root->left = ConstructBST(nums, left, med-1);
-		root->right = ConstructBST(nums, med+1, right);
-		return root;
-	}
+   TreeNode* ConstructBST(vector<int>& nums,
+                     int left,
+                     int right) {
+      if (left > right) return NULL;
+      int med = (left + right) / 2;
+      TreeNode* root = new TreeNode(nums[med]);
+      root->left = ConstructBST(nums, left, med-1);
+      root->right = ConstructBST(nums, med+1, right);
+      return root;
+   }
 };

@@ -11,20 +11,20 @@
 class Solution {
 public:
     bool isBalanced(TreeNode* root) {
-		int depth;
-		return isBalanced(root, depth);
+      int depth;
+      return isBalanced(root, depth);
     }
-	bool isBalanced(TreeNode* root, int& depth) {
-		if (!root) {
-			depth = 0;
-			return true;
-		}
-		int left_depth, right_depth;
-		if (!isBalanced(root->left, left_depth) || !isBalanced(root->right, right_depth)) {
-			return false;
-		}
-		depth = max(left_depth, right_depth) + 1;
-		return abs(left_depth - right_depth) <= 1;
+   bool isBalanced(TreeNode* root, int& depth) {
+      if (!root) {
+         depth = 0;
+         return true;
+      }
+      int left_depth, right_depth;
+      if (!isBalanced(root->left, left_depth) || !isBalanced(root->right, right_depth)) {
+         return false;
+      }
+      depth = max(left_depth, right_depth) + 1;
+      return abs(left_depth - right_depth) <= 1;
 
-	}
+   }
 };

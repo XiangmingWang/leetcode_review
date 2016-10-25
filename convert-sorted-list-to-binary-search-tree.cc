@@ -19,19 +19,19 @@
 class Solution {
 public:
     TreeNode* sortedListToBST(ListNode* head) {
-		vector<int> array;
-    	while (head) {
-			array.push_back(head->val);
-			head = head->next;
-		}    
-		return ConstructBST(array, 0, array.size()-1);
+      vector<int> array;
+       while (head) {
+         array.push_back(head->val);
+         head = head->next;
+      }    
+      return ConstructBST(array, 0, array.size()-1);
     }
-	TreeNode* ConstructBST(vector<int>& array, int left, int right) {
-		if (left > right) return NULL;
-		int med = (left + right) / 2;
-		TreeNode* root = new TreeNode(array[med]);
-		root->left = ConstructBST(array, left, med-1);
-		root->right = ConstructBST(array, med+1, right);
-		return root;
-	}
+   TreeNode* ConstructBST(vector<int>& array, int left, int right) {
+      if (left > right) return NULL;
+      int med = (left + right) / 2;
+      TreeNode* root = new TreeNode(array[med]);
+      root->left = ConstructBST(array, left, med-1);
+      root->right = ConstructBST(array, med+1, right);
+      return root;
+   }
 };

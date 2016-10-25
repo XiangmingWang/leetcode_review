@@ -10,15 +10,15 @@
 class Solution {
 public:
     void connect(TreeLinkNode *root) {
-		if (!root) return;
-		connectTwoNodes(root->left, root->right);
+      if (!root) return;
+      connectTwoNodes(root->left, root->right);
     }
-	void connectTwoNodes(TreeLinkNode* left, TreeLinkNode* right) {
-		if (!left) return;
-		left->next = right;
-		if (!left->left) return;
-		connectTwoNodes(left->left, left->right);
-		connectTwoNodes(left->right, right->left);
-		connectTwoNodes(right->left,right->right);
-	}
+   void connectTwoNodes(TreeLinkNode* left, TreeLinkNode* right) {
+      if (!left) return;
+      left->next = right;
+      if (!left->left) return;
+      connectTwoNodes(left->left, left->right);
+      connectTwoNodes(left->right, right->left);
+      connectTwoNodes(right->left,right->right);
+   }
 };

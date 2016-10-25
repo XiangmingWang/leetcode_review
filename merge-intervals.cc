@@ -45,16 +45,16 @@ public:
 };
 
 int main() {
-	Solution s;
-	vector<Interval> v;
-	Interval i1(1,3);
-	Interval i2(2,6);
-	Interval i3(8,10);
-	Interval i4(15,18);
-	v.push_back(i1);
-	v.push_back(i2);
-	v.push_back(i3);
-	v.push_back(i4);
-	v = s.merge(v);
-	cout <<v.size() <<endl;
+   Solution s;
+   vector<Interval> v;
+   Interval i1(1,3);
+   Interval i2(2,6);
+   Interval i3(8,10);
+   Interval i4(15,18);
+   v.push_back(i1);
+   v.push_back(i2);
+   v.push_back(i3);
+   v.push_back(i4);
+   v = s.merge(v);
+   cout <<v.size() <<endl;
 }

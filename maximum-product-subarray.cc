@@ -2,7 +2,7 @@
 class Solution {
 public:
     int maxProduct(vector<int>& nums) {
-		if (nums.empty()) return 0;
+      if (nums.empty()) return 0;
         int min_neg = nums[0], max_pos = nums[0];
         int max_product = nums[0];
         for (int i = 1; i < nums.size(); ++i) {
