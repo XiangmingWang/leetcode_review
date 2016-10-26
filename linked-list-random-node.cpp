@@ -22,11 +22,7 @@ public:
         int count = 1;
         int result = head_->val;
         while (p) {
-            int rnd = rand();
-            while (rnd == 0) {
-                rnd = rand();
-            }
-            if (rnd % count == 0) {  // possibility=1/count
+            if ((rand() + 1) % count == 0) {  // possibility=1/count, rand() returns a pseudo-random integral number in the range between 0 and RAND_MAX.
                 result = p->val;
             }
             p = p->next;
