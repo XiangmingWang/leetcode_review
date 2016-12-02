@@ -8,5 +8,7 @@
 #include <unordered_set>
 #include <list>
 #include <memory>
+#include <bitset>
+#include <array>
 
 using namespace std;
